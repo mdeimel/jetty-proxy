@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>jetty proxy</display-name>
+
+    <servlet>
+        <servlet-name>proxy</servlet-name>
+        <servlet-class>org.eclipse.jetty.proxy.ProxyServlet$Transparent</servlet-class>
+        <init-param>
+            <param-name>maxThreads</param-name>
+            <param-value>1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>proxyTo</param-name>
+            <param-value>http://www.cnn.com</param-value>
+        </init-param>
+        <init-param>
+        <param-name>prefix</param-name>
+        <param-value>/cnn</param-value>
+        </init-param>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>proxy</servlet-name>
+        <url-pattern>/cnn/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
