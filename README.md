@@ -1,3 +1,5 @@
+Attempting to create a proxy with Jetty.
+
 Start by running `mvn jetty:run`
 
 Navigate to http://localhost:8080/cnn
