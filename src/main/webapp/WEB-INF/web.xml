@@ -10,10 +10,6 @@
         <servlet-name>proxy</servlet-name>
         <servlet-class>org.eclipse.jetty.proxy.ProxyServlet$Transparent</servlet-class>
         <init-param>
-            <param-name>maxThreads</param-name>
-            <param-value>1</param-value>
-        </init-param>
-        <init-param>
             <param-name>proxyTo</param-name>
             <param-value>http://www.cnn.com</param-value>
         </init-param>
